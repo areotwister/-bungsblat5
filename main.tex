@@ -61,7 +61,7 @@ Testen Sie Ihr Programm mithilfe des RETI-Interpreters mittels des folgenden Auf
 reti_interpreter -i ./isrs.reti ./comparison.reti -d -b -m -E
 \end{verbatim}
 
-wobei Sie die Datei \verb|isrs.reti| unter folgender URL: \href{https://github.com/matthejue/RETI-Interpreter/blob/main/run/isrs.reti}{https://github.com/matthejue/RETI-Interpreter/blob/main/run/isrs.reti} runterladen können.
+wobei Sie die Datei \verb|isrs.reti| unter folgender URL: \href{https://github.com/matthejue/RETI-Interpreter/blob/main/run/isrs.reti}{https://github.com/matthejue/RETI-Interpreter/blob/main/run/isrs.reti} herunterladen können.
 
-Die Kommandozeilenoption \verb|-E| erlaubt es Ihnen Interrupt-Service Routinen direkt auszuführen ohne in Sie hineinzuspringen und sie komplett ausführen zu müssen. Mittels des Kommandos `s` ist es im Debug Mode weiterhin möglich in eine Interrupt-Service Routine hineinzuspringen, wenn der \verb|PC| direkt auf einen \verb|INT i|-Befehl zeigt. Wir wollten euch Studenten in den letzten Übungsblättern nicht mit zu vielen neuen Kommandos und Befehlen verwirren und haben daher Erweiterte Funktionalitäten hinter der Option \verb|-E| versteckt.
+Die Kommandozeilenoption \verb|-E| erlaubt es Ihnen Interrupt-Service Routinen direkt komplett auszuführen ohne in Sie hineinzuspringen. Mittels des Kommandos `s` ist es im Debug Mode weiterhin möglich in eine Interrupt-Service Routine hineinzuspringen, wenn der \verb|PC| direkt auf einen \verb|INT i|-Befehl zeigt. Wir wollten euch Studenten in den letzten Übungsblättern nicht mit zu vielen neuen Kommandos verwirren und haben daher erweiterte Funktionalitäten hinter der Option \verb|-E| versteckt.
 \end{document}
