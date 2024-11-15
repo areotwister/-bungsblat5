@@ -1,0 +1,9 @@
+# input: -2097152 2097151
+INT 2
+STOREIN DS ACC 0 # num1
+INT 2
+STOREIN DS ACC 1 # num2
+INT 3
+# Ihr Code kommt hierher
+INT 0
+JUMP 0

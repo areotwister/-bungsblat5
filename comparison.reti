@@ -1,0 +1,33 @@
+# input: 8 -2097152 2097151  2097151 -2097152  2097150 2097151  2097151 2097150  -2097152 -2097151  -2097151 -2097152  2097151 2097151  -2097152 -2097152
+# output: 1 0 1 0 1 0 1 1
+# storing variables
+INT 2 # number of tests
+SUBI SP 1
+STOREIN SP ACC 1
+INT 2
+STOREIN DS ACC 0 # num1
+INT 2
+STOREIN DS ACC 1 # num2
+INT 3
+# check num1 <= num2
+LOADIN DS IN1 0 # num1
+LOADIN DS IN2 1 # num2
+MOVE IN1 ACC
+OPLUS ACC IN2
+JUMP>= 4 # durchlassen wenn Vorzeichen unterschiedlich
+MOVE IN1 ACC
+JUMP< 7 # wenn num1 negativ ist, ist Ergebnis true, da num2 dann positiv sein muss, da wir wegen dem Check davor wissen, dass die Vorzeichen unterschiedlich sein müssen
+JUMP 4 # num1 ist also positiv, ist Ergebnis false, da num2 dann negativ sein muss, da wir wegen dem Check davor wissen, dass die Vorzeichen unterschiedlich sein müssen
+SUB IN1 IN2 # falls Vorzeichen gleich sind, einfach Check wie üblich durchführen, da nur ein Overflow auftreten kann, wenn die Vorzeichen beider Zahlen unterschiedlich sind
+MOVE IN1 ACC
+JUMP<= 3 # Ergebnis ist true gdw. num1 - num2 <= 0 gdw. num1 <= num2
+LOADI ACC 0 # Ergebnis false
+JUMP 2
+LOADI ACC 1 # Ergebnis true
+# deal with loop counter
+INT 0
+LOADIN SP ACC 1
+SUBI ACC 1
+STOREIN SP ACC 1
+JUMP!= -23
+JUMP 0

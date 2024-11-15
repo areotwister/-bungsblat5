@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[parfill]{parskip}
+\usepackage[colorlinks=true, linkcolor=cyan, filecolor=cyan, urlcolor=cyan, citecolor=cyan]{hyperref}
+\usepackage{geometry}
+\newgeometry{left=3cm,right=3cm,top=3cm,bottom=3cm}
+
+\begin{document}
+\sloppy
+
+\textbf{Aufgabe 2} (2+4+2 Punkte)
+
+Geben Sie Ihre Lösung für diese Aufgabe in einer Datei \verb|arithmetic.reti| ab.
+
+Betrachten Sie folgendes Pico-C Programm mit Deklarations- und Anweisungsteil.
+
+\begin{verbatim}
+void main() {
+  //Deklarationsteil
+  int x;
+  int y;
+  const int z = 5;
+  //Anweisungsteil
+  y = 3;
+  x = 2;
+  x = (x + ((y * z) + 10)); // vollstaendig geklammerter Ausdruck
+}
+\end{verbatim}
+
+\begin{enumerate}
+	\item Schreiben Sie die Befehlsfolge der erweiterten RETI in die Datei \verb|arithmetic.reti|, die den im obigen Programm dargestellten vollständig geklammerten Ausdruck auswertet und das Ergebnis oben auf den Stack schreibt. % Schreiben Sie außerdem nach jedem Teilergebnis den aktuellen Stand des Stacks graphisch dar
+	\item Schreiben Sie in einen Kommentar am Ende der Datei \verb|arithmetic.reti| die Einträge der Symboltabelle für den Deklarationsteil, wie sie sich in Ihrem geschriebenen Programm \verb|arithmetic.reti| ergeben.
+	\item Angenommen Sie haben $n$ Variablen $x_1, \ldots ,x_n$, die durch (beliebige) binäre Operanden zu einem vollständig geklammerten Ausdruck verknüpft werden, sodass jede Variable exakt einmal vorkommt.
+	\begin{enumerate}
+		\item Wie sieht der vollständig geklammerte Ausdruck aus, der die maximale Anzahl an Teilergebnissen auf dem Stack erfordert? Wie viele Teilergebnisse sind das?
+		\item Wie sieht der vollständig geklammerte Ausdruck aus, der die minimale Anzahl an Teilergebnissen auf dem Stack erfordert? Wie viele Teilergebnisse sind das?
+	\end{enumerate}
+  Schreibe Sie Ihre Antwort in einen Kommentar am Ende der Datei \verb|arithmetic.reti|.
+\end{enumerate}
+
+\textbf{Aufgabe 3} (6 Punkte)
+
+Die Auswertung von Vergleichsoperatoren aus Pico-C erfolgt auf der RETI, indem die Differenz der linken und rechten Seite gebildet wird und diese (je nach Vergleichsoperator) mit $0$ verglichen wird. Beispiel: $x \le y$ wird zu $x - y \le 0$ Dieses Vorgehen kann jedoch zu Überläufen führen, wenn die Ausdrücke auf beiden Seiten ein unterschiedliches Vorzeichen haben.
+
+Geben Sie zur Behandlung dieses Problems innerhalb des folgenden Codegerüsts ein RETI-Programm in einer Datei \verb|comparison.reti| an, das den logischen Ausdruck $x \le y$ korrekt zu $0$ bzw. $1$ auswertet, auch wenn bei der Berechnung von $x - y$ ein Überlauf auftritt indem entsprechend $1$ oder $0$ in den ACC geschrieben wird. Die beiden zu vergleichenden Variablen $x$ und $y$ werden vom vorgegebenen Codegerüst auf dem Stack gespeichert. % Nehmen Sie dazu an, dass die Integer-Variable $x$ an der Speicherstelle $10$ und die Integer-Variable $y$ an der Speicherstelle $11$ abgespeichert ist
+
+\begin{verbatim}
+# input: -2097152 2097151
+INT 2
+STOREIN DS ACC 0 # num1
+INT 2
+STOREIN DS ACC 1 # num2
+INT 3
+# Ihr Code kommt hierher 
+INT 0
+JUMP 0
+\end{verbatim}
+
+Testen Sie Ihr Programm mithilfe des RETI-Interpreters mittels des folgenden Aufrufs:
+
+\begin{verbatim}
+reti_interpreter -i ./isrs.reti ./comparison.reti -d -b -m -E
+\end{verbatim}
+
+wobei Sie die Datei \verb|isrs.reti| unter folgender URL: \href{https://github.com/matthejue/RETI-Interpreter/blob/main/run/isrs.reti}{https://github.com/matthejue/RETI-Interpreter/blob/main/run/isrs.reti} runterladen können.
+
+Die Kommandozeilenoption \verb|-E| erlaubt es Ihnen Interrupt-Service Routinen direkt auszuführen ohne in Sie hineinzuspringen und sie komplett ausführen zu müssen. Mittels des Kommandos `s` ist es im Debug Mode weiterhin möglich in eine Interrupt-Service Routine hineinzuspringen, wenn der \verb|PC| direkt auf einen \verb|INT i|-Befehl zeigt. Wir wollten euch Studenten in den letzten Übungsblättern nicht mit zu vielen neuen Kommandos und Befehlen verwirren und haben daher Erweiterte Funktionalitäten hinter der Option \verb|-E| versteckt.
+\end{document}
