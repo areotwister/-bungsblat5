@@ -9,7 +9,7 @@ INT 2
 STOREIN SP ACC 2 # Zahl 1
 INT 2
 STOREIN SP ACC 1 # Zahl 2
-INT 3
+INT 3 # Breakpoint, springen sie mittels ’c’ im Debug Mode (’-d’) hierher
 # num1 <= num2 checken
 LOADIN SP IN1 2 # Zahl 1
 LOADIN SP IN2 1 # Zahl 2
@@ -28,7 +28,7 @@ LOADI ACC 1 # Ergebnis true
 STOREIN SP ACC 2
 ADDI SP 1
 # Eregbnis ausgeben
-LOADIN SP ACC 1 
+LOADIN SP ACC 1
 INT 0
 ADDI SP 1
 # Schleifenzähler runterzählen
