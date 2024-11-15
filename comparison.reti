@@ -2,8 +2,9 @@
 # output: 1 0 1 0 1 0 1 1
 # Variablen speichern
 INT 2 # Anzahl Tests
-SUBI SP 3
-STOREIN SP ACC 3
+SUBI SP 1
+STOREIN SP ACC 1
+SUBI SP 2
 INT 2
 STOREIN SP ACC 2 # num1
 INT 2
@@ -24,11 +25,16 @@ JUMP<= 3 # Ergebnis ist true gdw. num1 - num2 <= 0 gdw. num1 <= num2
 LOADI ACC 0 # Ergebnis false
 JUMP 2
 LOADI ACC 1 # Ergebnis true
+STOREIN SP ACC 2
+ADDI SP 1
 # Schleifenzähler runterzählen
-LOADIN 
+LOADIN SP ACC 1 
 INT 0
-LOADIN SP ACC 3
+ADDI SP 1
+INT 3
+LOADIN SP ACC 1
 SUBI ACC 1
-STOREIN SP ACC 3
-JUMP!= -23
+STOREIN SP ACC 1
+JUMP!= -29
+ADDI SP 1
 JUMP 0
