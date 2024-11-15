@@ -6,9 +6,9 @@ SUBI SP 1
 STOREIN SP ACC 1
 SUBI SP 2
 INT 2
-STOREIN SP ACC 2 # num1
+STOREIN SP ACC 2 # Zahl 1
 INT 2
-STOREIN SP ACC 1 # num2
+STOREIN SP ACC 1 # Zahl 2
 INT 3
 # num1 <= num2 checken
 LOADIN SP IN1 2 # num1
@@ -27,11 +27,11 @@ JUMP 2
 LOADI ACC 1 # Ergebnis true
 STOREIN SP ACC 2
 ADDI SP 1
-# Schleifenzähler runterzählen
+# Eregbnis ausgeben
 LOADIN SP ACC 1 
 INT 0
 ADDI SP 1
-INT 3
+# Schleifenzähler runterzählen
 LOADIN SP ACC 1
 SUBI ACC 1
 STOREIN SP ACC 1

@@ -47,13 +47,14 @@ Geben Sie zur Behandlung dieses Problems innerhalb des folgenden Codegerüsts ei
 # input: -2097152 2097151
 SUBI SP 2
 INT 2
-STOREIN SP ACC 1 # Zahl1
+STOREIN SP ACC 2 # Zahl 1
 INT 2
-STOREIN SP ACC 2 # Zahl2
-INT 3
+STOREIN SP ACC 1 # Zahl 2
+INT 3 # Breakpoint, springen sie mittels 'c' im Debug Mode ('-d') hierher
 # Ihr Code kommt hierher
 LOADIN SP ACC 1 # Ergebnis
 INT 0
+ADDI SP 1
 JUMP 0
 \end{verbatim}
 
