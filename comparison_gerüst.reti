@@ -1,9 +1,12 @@
 # input: -2097152 2097151
+SUBI SP 2
 INT 2
-STOREIN DS ACC 0 # num1
+STOREIN SP ACC 1 # Zahl1
 INT 2
-STOREIN DS ACC 1 # num2
+STOREIN SP ACC 2 # Zahl2
 INT 3
 # Ihr Code kommt hierher
+SUBI SP 1
+LOADIN SP ACC 1 # Ergebnis
 INT 0
 JUMP 0

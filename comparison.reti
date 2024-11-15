@@ -2,16 +2,16 @@
 # output: 1 0 1 0 1 0 1 1
 # Variablen speichern
 INT 2 # Anzahl Tests
-SUBI SP 1
-STOREIN SP ACC 1
+SUBI SP 3
+STOREIN SP ACC 3
 INT 2
-STOREIN DS ACC 0 # num1
+STOREIN SP ACC 2 # num1
 INT 2
-STOREIN DS ACC 1 # num2
+STOREIN SP ACC 1 # num2
 INT 3
 # num1 <= num2 checken
-LOADIN DS IN1 0 # num1
-LOADIN DS IN2 1 # num2
+LOADIN SP IN1 2 # num1
+LOADIN SP IN2 1 # num2
 MOVE IN1 ACC
 OPLUS ACC IN2
 JUMP>= 4 # Durchlassen wenn Vorzeichen unterschiedlich
@@ -26,8 +26,8 @@ JUMP 2
 LOADI ACC 1 # Ergebnis true
 # Schleifenzähler runterzählen
 INT 0
-LOADIN SP ACC 1
+LOADIN SP ACC 3
 SUBI ACC 1
-STOREIN SP ACC 1
+STOREIN SP ACC 3
 JUMP!= -23
 JUMP 0
