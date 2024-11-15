@@ -6,7 +6,7 @@ INT 2
 STOREIN SP ACC 2 # Zahl2
 INT 3
 # Ihr Code kommt hierher
-SUBI SP 1
 LOADIN SP ACC 1 # Ergebnis
 INT 0
 JUMP 0
+

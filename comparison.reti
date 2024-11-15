@@ -25,6 +25,7 @@ LOADI ACC 0 # Ergebnis false
 JUMP 2
 LOADI ACC 1 # Ergebnis true
 # Schleifenzähler runterzählen
+LOADIN 
 INT 0
 LOADIN SP ACC 3
 SUBI ACC 1
