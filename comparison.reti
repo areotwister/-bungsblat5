@@ -11,8 +11,8 @@ INT 2
 STOREIN SP ACC 1 # Zahl 2
 INT 3
 # num1 <= num2 checken
-LOADIN SP IN1 2 # num1
-LOADIN SP IN2 1 # num2
+LOADIN SP IN1 2 # Zahl 1
+LOADIN SP IN2 1 # Zahl 2
 MOVE IN1 ACC
 OPLUS ACC IN2
 JUMP>= 4 # Durchlassen wenn Vorzeichen unterschiedlich
@@ -35,6 +35,6 @@ ADDI SP 1
 LOADIN SP ACC 1
 SUBI ACC 1
 STOREIN SP ACC 1
-JUMP!= -29
+JUMP!= -28
 ADDI SP 1
 JUMP 0
